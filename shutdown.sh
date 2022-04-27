@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ps -ef | awk '{print $2}' | xargs kill -9
+ps -ef | sed -n '2, $p' | awk '{print $2}' | xargs kill -9
